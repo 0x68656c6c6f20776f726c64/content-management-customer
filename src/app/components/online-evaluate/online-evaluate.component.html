@@ -1,0 +1,35 @@
+<section class="narrow">
+    <mat-tab-group class="mat-tab" mat-align-tabs="center" [selectedIndex]="model.defaultShow" >
+        <mat-tab *ngFor="let tab of model.tabs" [label]=tab.projectTitle.value>
+            <mat-vertical-stepper linear='Disable linear mode' #stepper>
+              <div *ngFor="let fg of tab.formGroups">
+                <mat-step [stepControl]="fg.formGroup" >
+                  <form [formGroup]="fg.formGroup">
+                    <ng-template matStepLabel>{{fg.title}}</ng-template>
+                    <div *ngFor="let input of fg.inputs" >
+                    <mat-form-field> 
+                      <mat-label>{{input.lable}}</mat-label>
+                      <input matInput [placeholder]=input.placeholder formControlName={{input.inputId}}>
+                      <!-- <mat-select *ngIf="input.option">
+                        <mat-option matInput *ngFor="let op of input.option" value="option">{{op}}</mat-option>
+                      </mat-select> -->
+                    </mat-form-field>
+                  </div>
+                    <div>
+                      <button *ngIf="fg.back" mat-button matStepperPrevious>{{fg.back}}</button>
+                      <button *ngIf="fg.next" mat-button matStepperNext>{{fg.next}}</button>
+                    </div>
+                  </form>
+                </mat-step>
+              </div>
+                <mat-step>
+                  <ng-template matStepLabel>完成评估</ng-template>
+                  <div>
+                    <button mat-button matStepperPrevious>上一步</button>
+                    <button mat-button (click)="stepper.reset()">递交评估</button>
+                  </div>
+                </mat-step>
+              </mat-vertical-stepper>
+        </mat-tab>
+    </mat-tab-group>
+</section>

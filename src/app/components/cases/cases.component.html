@@ -1,0 +1,22 @@
+<section class="section bg-dark pb-0">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-8 text-center">
+          <h2 class=" heading mb-4">我们完成的经典案例</h2>
+          <p class="mb-5 description">Check Our Classic Cases</p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row no-gutters">
+        <div class="col-md-4" *ngFor="let c of model.cases">
+          <a  routerLink="../articles/{{c.caseId}}" class="link-thumbnail">
+            <h3>{{c.caseTitle}}</h3>
+            <span class="ion-plus icon"></span>
+            <img [src]=c.imageUrl alt="Image" class="img-fluid">
+          </a>
+        </div>
+      </div>     
+    </div>
+  </section>
+  <!-- END section -->

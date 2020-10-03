@@ -1,0 +1,21 @@
+
+html, body { height: 100%; }
+body {font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu  }
+.carousel-item {
+    display: block !important;
+    z-index: 1;
+    position: absolute;
+    transition: ease-in-out 1.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+.carousel-item.active {
+    position: relative;
+    transition: ease-in-out 1.5s;
+    visibility: visible;
+    opacity: 1;
+}
+.narrow{
+    margin-left: 15%;
+    margin-right: 15%;
+}

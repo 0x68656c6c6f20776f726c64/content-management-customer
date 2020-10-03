@@ -1,0 +1,23 @@
+<ngb-accordion #acc="ngbAccordion" [closeOthers]="true" activeIds="ngb-panel-0">
+    <ngb-panel title="热门项目">
+      <ng-template ngbPanelContent>
+          <ul class="list_item">
+              <li *ngFor="let p of model.projects"><a routerLink="../../projects/{{p.projectId}}">{{p.value}}</a></li>
+          </ul>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel title="最新资讯">
+        <ng-template ngbPanelContent>
+            <ul class="list_item">
+                <li *ngFor="let n of model.news"><a routerLink="../../articles/{{n.newsId}}">{{n.title}}</a></li>
+            </ul>
+          </ng-template>
+    </ngb-panel>
+    <ngb-panel title="经典案例">
+        <ng-template ngbPanelContent>
+            <ul class="list_item">
+                <li *ngFor="let c of model.cases"><a routerLink="../../articles/{{c.caseId}}">{{c.caseTitle}}</a></li>
+            </ul>
+          </ng-template>
+    </ngb-panel>
+</ngb-accordion>

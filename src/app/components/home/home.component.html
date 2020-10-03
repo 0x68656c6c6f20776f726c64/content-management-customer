@@ -1,0 +1,49 @@
+<section class="section bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-4">
+          <div class="media block-6 d-block text-center">
+            <div class="icon mb-3"><span class="ion-ios-bell-outline"></span></div>
+            <div class="media-body">
+              <h3 class="heading">专业</h3>
+              <p>专业团队服务，咨询</p>
+            </div>
+          </div>  
+
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="media block-6 d-block text-center">
+            <div class="icon mb-3"><span class="ion-ios-heart-outline"></span></div>
+            <div class="media-body">
+              <h3 class="heading">友善</h3>
+              <p>用心对待每一个客户</p>
+            </div>
+          </div> 
+
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="media block-6 d-block text-center">
+            <div class="icon mb-3"><span class="ion-ios-bolt-outline"></span></div>
+            <div class="media-body">
+              <h3 class="heading">快速</h3>
+              <p>快速高效的办理</p>
+            </div>
+          </div> 
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END section -->
+
+  <section>
+    <div class="half d-lg-flex d-block" *ngFor="let pv of model.projectViews">
+      <div *ngIf="pv.left" class="image" style="background-image: url('{{pv.imageUrl}}')"></div>
+      <div class="text text-center bg-dark hp-box">
+        <h3 class="mb-4 heading">{{pv.value}}</h3>
+        <p class="mb-5">{{pv.description}}</p>
+        <p class="hp-button"><a routerLink="projects/{{pv.projectId}}">了解详情</a></p>
+      </div>
+      <div *ngIf="!pv.left" class="image order-2" style="background-image: url('{{pv.imageUrl}}')"></div>
+    </div>
+  </section>

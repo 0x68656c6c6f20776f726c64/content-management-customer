@@ -1,0 +1,15 @@
+/* .btn-dark{
+    background-color: #222222 !important;
+    color: #B88A44;
+}
+.btn-dark:hover{
+    color:whitesmoke;
+} */
+.description{
+    color: whitesmoke;
+    font-size: medium;
+    line-height: 200%;
+}
+.heading{
+    color:#B88A44;
+}

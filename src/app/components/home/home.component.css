@@ -1,0 +1,16 @@
+.hp-box{
+    color:#B88A44;
+}
+.hp-button{
+    cursor: pointer;
+}
+.hp-button :hover{
+    color:whitesmoke;
+    text-decoration: underline;
+}
+.media{
+    color:#B88A44
+}
+.heading{
+    color:whitesmoke
+}

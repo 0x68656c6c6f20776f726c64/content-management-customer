@@ -1,0 +1,46 @@
+@media screen and (min-width: 770px) 
+{
+    .left{
+        margin-left: 20%;
+    } 
+    .buttom-nav{
+        margin-top: 50px;
+        margin-bottom: 50px
+    }
+    .title{
+        margin-top:3rem;
+        margin-bottom:1.4rem;
+    }
+    .subTitle{
+        margin-bottom: 1.4rem;
+    }
+    .right{
+        margin-top:3rem;
+    }
+}
+@media screen and (min-width: 1500px) 
+{
+    .right{
+        width:20%;
+        margin-right: 100px;
+    }
+}
+@media screen and (max-width: 770px) 
+{
+    .right{
+        display: none;
+    }
+    .left{
+        margin-left: 10%;
+        flex-basis: 80%;
+        max-width: 100%;
+    } 
+    .buttom-nav{
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+}
+.text-body{
+    font-size: 0.9rem;
+    line-height: 2;
+}

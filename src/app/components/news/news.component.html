@@ -1,0 +1,30 @@
+<section class="section blog">
+    <div class="container">
+
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-8 text-center">
+          <h2 class=" heading mb-4">最新资讯</h2>
+          <p class="mb-5 lead">{{description}}</p>
+        </div>
+      </div>
+
+      <div class="row" >
+        <div class="card news-container" appMaterialElevation [defaultElevation]="defaultElevation" raisedElevation="16" *ngFor="let cardInfo of newsCards|slice: (page-1) * pageLimit : (page-1) * pageLimit + pageLimit">
+          <div class="row align-items center" [@rowsAnimation]="" >
+            <div class="col card-image" style="background-image:url({{cardInfo.image}});"></div>
+            <div class="col-md-9">
+              <ul style="list-style-type:none;">
+                <li class="card-title">{{cardInfo.title}}</li>
+                <li class="card-time">{{cardInfo.post_date}}</li>
+                <li class="card-description">{{cardInfo.description}}</li>
+              </ul>
+            </div>
+            <div class="col-auto">
+              <button type="button" class="btn btn-outline-primary"  (click)="selectNews(cardInfo.newsId)">更多</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ngb-pagination class="d-flex justify-content-center" [collectionSize]="maxPage" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
+    </div>
+  </section>

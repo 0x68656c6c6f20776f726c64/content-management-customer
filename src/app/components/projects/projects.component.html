@@ -1,0 +1,61 @@
+<section class="article section">
+    <div class="row">
+        <div class="col-6 left"> 　
+            <div class="row">
+                <div class="title"><h4>项目介绍</h4></div>
+                <div class="project_body">
+                  {{model.projectDescription}}
+                </div>
+                <ngb-tabset [destroyOnHide]="false" style="width:100%">
+                    <ngb-tab title="项目流程">
+                      <ng-template ngbTabContent>
+                        <mat-horizontal-stepper class="flow" linear='Enable linear mode' #stepper>
+                            <mat-step *ngFor="let f of model.projectFlow">
+                                <ng-template matStepLabel>{{f.listTitle}}</ng-template>
+                                <ul *ngFor="let fd of f.listDescription">
+                                  <li>{{fd}}</li>
+                                </ul>
+                            </mat-step>
+                          </mat-horizontal-stepper>
+                      </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title="项目要求">
+                        <ng-template ngbTabContent>
+                          <div class="mt-3" *ngFor="let pr of model.projectRequirements">
+                            <h4 class="title">{{pr.listTitle}}</h4>
+                            <ul *ngFor="let prd of pr.listDescription">
+                              <li>{{prd}}</li>
+                            </ul>
+                          </div>
+                        </ng-template>
+                      </ngb-tab>
+                      <ngb-tab title="项目收费">
+                        <ng-template ngbTabContent *ngIf="model.projectFee">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                  <th scope="col" *ngFor="let tt of model.projectFee.title">{{tt}}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let tr of model.projectFee.rows">
+                                  <th scope="row">{{tr.rowHeading}}</th>
+                                  <td *ngFor="let rc of tr.content">{{rc}}</td>
+                                </tr>
+                                </tbody>
+                              </table>
+                        </ng-template>
+                      </ngb-tab>
+                  </ngb-tabset>
+                  <div style="width:100%;" *ngIf="model.evaluationId">
+                    <ul class="navbar-nav ml-auto" style="text-align: center;">
+                        <li><button (click)="goEvaluation()" class="btn btn-primary px-3 py-2">进行在线评估</button></li>
+                    </ul>
+                 </div>
+            </div>
+        </div>
+        <div class="col-auto right">
+           <app-side-nav></app-side-nav>
+        </div>
+    </div>
+</section>

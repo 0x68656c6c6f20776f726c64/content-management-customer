@@ -1,0 +1,14 @@
+::ng-deep
+  .card {
+    border:none;
+  }
+  ::ng-deep ngb-accordion .card-header{
+      border:none;
+      color:#B88A44;
+      text-decoration: none;
+  }
+  .list_item{
+      list-style-type: none;
+      padding-left: .75rem;
+      line-height: 200%;
+  }

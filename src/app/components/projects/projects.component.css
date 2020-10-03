@@ -1,0 +1,38 @@
+@media screen and (min-width: 770px) 
+{
+    .top-nav{
+        margin-bottom:50px;
+        margin-left: 70px;
+    }
+    .left{
+        margin-left: 20%;
+        padding-right: 2%;
+    } 
+}
+@media screen and (min-width: 1500px) 
+{
+    .right{
+        width:20%;
+        margin-right: 100px;
+    }
+}
+@media screen and (max-width: 770px) 
+{
+    .right{
+        display: none;
+    }
+    .left{
+        margin-left: 10%;
+        flex-basis: 80%;
+        max-width: 80%;
+    } 
+}
+.title{
+    margin-bottom: 20px;
+}
+.project_body{
+    margin-bottom: 40px;
+}
+.left{
+    line-height: 200%;
+}

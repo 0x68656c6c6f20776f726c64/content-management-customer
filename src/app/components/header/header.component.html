@@ -1,0 +1,63 @@
+<header role="banner">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand " href=""><img src={{model.logoImage.logoNormal}} class="logoNormal d-inline-block align-top">Polar Pioneers</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample05">
+          <ul class="navbar-nav pl-md-5">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="" >首页</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="cases" >成功案例</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="news">移民资讯</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" [matMenuTriggerFor]="mainMenue">移民项目</a>
+
+              <mat-menu #mainMenue="matMenu">
+                <ng-container *ngFor="let cat of model.projectInfo">
+                  <button mat-menu-item [matMenuTriggerFor]="subMenu">{{cat.value}}</button>
+                  <mat-menu #subMenu="matMenu">
+                    <ng-container *ngFor="let pi of cat.projectItems">
+                      <button mat-menu-item routerLink="/projects/{{pi.projectId}}">{{pi.value}}</button>
+                    </ng-container>
+                  </mat-menu>
+                </ng-container>
+              </mat-menu>
+              
+              
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="online_evaluation">在线评估</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="about_us">关于我们</a>
+            </li>
+          </ul>
+<!-- 
+          <ul class="navbar-nav ml-auto">
+            <li><a href="#" target="_blank" class="btn btn-primary px-3 py-2">登录</a></li>
+          </ul> -->
+          
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- END header -->
+
+  <ngb-carousel class="mt-5">
+    <ng-template ngbSlide *ngFor="let banner of model.bannerObjects">
+      <div class="picsum-img-wrapper">
+        <img [src]="banner.imageUrl" class="slide-image" alt="Random first slide">
+      </div>
+      <div class="carousel-caption">
+      </div>
+    </ng-template>
+</ngb-carousel>
+  

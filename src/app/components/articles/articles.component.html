@@ -1,0 +1,22 @@
+<section class="article section">
+<div class="row">
+    <div class="col-6 left"> 　
+        <h3 class="display-4 text-center title">{{model.newsTitle? model.newsTitle.title:model.caseTitle.caseTitle}}</h3>
+        <h5 class="text-muted text-center subTitle">{{model.subHeading}}</h5>
+        <div class="text-left text-body">
+            {{model.body}}
+        </div>
+        <div class="row buttom-nav">
+            <div class="col">
+                <a *ngIf="model.linkBack" routerLink="../../articles/{{model.linkBack.routerId}}">上一篇：{{model.linkBack.title}}</a>
+            </div>
+            <div class="col" style="text-align: right;">
+                <a *ngIf="model.linkNext" routerLink="../../articles/{{model.linkNext.routerId}}">下一篇：{{model.linkNext.title}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-auto right">
+        <app-side-nav></app-side-nav>
+    </div>
+</div>
+</section>
